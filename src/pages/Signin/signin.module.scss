@@ -37,14 +37,21 @@
 
 input[type='submit'] {
   font-size: 1.8rem;
+  height: 3.5rem;
   margin-top: 1.5rem;
   border: 0.1rem solid color.$primary;
   border-radius: 0.3rem;
+  background-color: color.$primary;
+  color: color.$backgroundWhite;
+}
+
+input[type='submit']:hover {
   background-color: color.$backgroundWhite;
   color: color.$primary;
 }
 
-input[type='submit']:hover {
-  background-color: color.$primary;
-  color: color.$backgroundWhite;
+input[type='submit']:disabled {
+  background-color: color.$backgroundWhite;
+  border: 0.1rem solid color.$disabled;
+  color: color.$disabled;
 }
