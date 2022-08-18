@@ -1,0 +1,10 @@
+@use '../../styles/color';
+
+.formWrapper {
+  margin-bottom: 3rem;
+}
+
+.formWrapper input[type='text'] {
+  width: 20rem;
+  margin-right: 0.5rem;
+}

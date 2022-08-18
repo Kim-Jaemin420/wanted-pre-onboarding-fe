@@ -1,0 +1,23 @@
+@use '../../styles/color';
+
+.wrapper {
+  font-size: 1.6rem;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper > div {
+  background-color: color.$backgroundWhite;
+  padding: 2rem 2rem;
+  width: 30rem;
+  min-height: 50rem;
+  height: auto;
+}
+
+.wrapper h1 {
+  text-align: center;
+  margin-bottom: 3rem;
+}
