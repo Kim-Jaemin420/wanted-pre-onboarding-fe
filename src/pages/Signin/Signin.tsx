@@ -1,9 +1,13 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { TODO_PAGE } from '../../consts';
 import styles from './signin.module.scss';
 
 const { wrapper } = styles;
 
 function Signin() {
+  const navigate = useNavigate();
+
   const validateEmailCondition = (email: string) => {
     const EMAIL_REGEX = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
 
@@ -26,6 +30,8 @@ function Signin() {
     console.log(event);
 
     event.preventDefault();
+
+    navigate(TODO_PAGE);
   };
 
   const handleChangeForm = (event: React.ChangeEvent<HTMLFormElement>) => {
