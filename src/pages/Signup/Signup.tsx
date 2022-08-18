@@ -1,12 +1,18 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { SIGNIN_PAGE } from '../../consts';
 import { validateEmailCondition, validatePasswordCondition } from '../../utils';
 import styles from './signup.module.scss';
 
 const { wrapper } = styles;
 
 function Signup() {
+  const navigate = useNavigate();
+
   const handleSubmitForm = (event: React.FormEvent) => {
     event.preventDefault();
+
+    navigate(SIGNIN_PAGE);
   };
 
   const handleChangeForm = (event: React.ChangeEvent<HTMLFormElement>) => {
