@@ -1,30 +1,13 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { TODO_PAGE } from '../../consts';
+import { validateEmailCondition, validatePasswordCondition } from '../../utils';
 import styles from './signin.module.scss';
 
 const { wrapper } = styles;
 
 function Signin() {
   const navigate = useNavigate();
-
-  const validateEmailCondition = (email: string) => {
-    const EMAIL_REGEX = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-
-    if (EMAIL_REGEX.test(email)) {
-      return true;
-    }
-    return false;
-  };
-
-  const validatePasswordCondition = (password: string) => {
-    const PASSWORD_MINIMUM_LENGTH = 8;
-
-    if (password.length >= PASSWORD_MINIMUM_LENGTH) {
-      return true;
-    }
-    return false;
-  };
 
   const handleSubmitForm = (event: React.FormEvent) => {
     console.log(event);
