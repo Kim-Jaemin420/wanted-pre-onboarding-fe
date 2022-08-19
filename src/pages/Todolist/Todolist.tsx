@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useEffect } from 'react';
+import { getTodos } from '../../api';
 import { TodoForm, TodoItem } from '../../components';
 import styles from './todolist.module.scss';
 
-const { wrapper } = styles;
+const { wrapper, todoList } = styles;
 
 function Todolist() {
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getTodos();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className={wrapper}>
       <div>
         <h1>todo</h1>
         <TodoForm />
-        <ul>
+        <ul className={todoList}>
           <TodoItem />
           <TodoItem />
           <TodoItem />
