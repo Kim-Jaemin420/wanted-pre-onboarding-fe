@@ -1,5 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { AxiosError } from 'axios';
+import { signup } from '../../api/user';
 import { SIGNIN_PAGE } from '../../consts';
 import { validateEmailCondition, validatePasswordCondition } from '../../utils';
 import styles from './signup.module.scss';
@@ -9,10 +11,25 @@ const { wrapper } = styles;
 function Signup() {
   const navigate = useNavigate();
 
-  const handleSubmitForm = (event: React.FormEvent) => {
+  const handleSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
-    navigate(SIGNIN_PAGE);
+    const { emailField, passwordField } = event.currentTarget;
+    const email = emailField.value;
+    const password = passwordField.value;
+
+    try {
+      await signup({ email, password });
+
+      emailField.value = '';
+      passwordField.value = '';
+      navigate(SIGNIN_PAGE);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        console.error(error);
+        alert(error.response?.data.message);
+      }
+    }
   };
 
   const handleChangeForm = (event: React.ChangeEvent<HTMLFormElement>) => {
