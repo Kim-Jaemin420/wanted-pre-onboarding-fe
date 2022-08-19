@@ -1,17 +1,31 @@
+import { AxiosError } from 'axios';
 import React from 'react';
+import { createTodo } from '../../api';
+import { Todo } from '../../types';
 import styles from './todoForm.module.scss';
 
 const { formWrapper } = styles;
 
 function TodoForm() {
-  const handleSubmitForm = (event: React.FormEvent) => {
+  const handleSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    const { todoField } = event.currentTarget;
+    const todo: string = todoField.value;
+
+    try {
+      const { data } = await createTodo({ todo });
+      console.log(data);
+    } catch (error) {
+      if (error instanceof AxiosError) {
+        console.log(error.response);
+      }
+    }
   };
 
   const handleChangeForm = (event: React.ChangeEvent<HTMLFormElement>) => {
     let isSubmitDisabed = false;
     const { todoField, submitField } = event.currentTarget;
-    console.log(todoField, submitField);
 
     if (!todoField.value) {
       isSubmitDisabed = true;
