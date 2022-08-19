@@ -12,7 +12,7 @@
 .wrapper > div {
   background-color: color.$backgroundWhite;
   padding: 2rem 2rem;
-  width: 33rem;
+  width: 40rem;
   min-height: 50rem;
   height: auto;
 }
@@ -22,6 +22,9 @@
   margin-bottom: 2rem;
 }
 
-.wrapper ul {
-  margin-left: 1.5rem;
+.todoList {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }

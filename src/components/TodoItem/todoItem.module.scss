@@ -5,9 +5,8 @@
   line-height: 2rem;
 }
 
-.todoItem label::before {
+.checkBox {
   display: inline-block;
-  content: '';
   margin-right: 0.5rem;
   width: 2rem;
   height: 2rem;
@@ -15,7 +14,7 @@
   border-radius: 0.5rem;
 }
 
-input[type='checkbox']:checked + label::before {
+input[type='checkbox']:checked + label > .checkBox {
   background-color: color.$primary;
   display: inline-block;
   content: '';
