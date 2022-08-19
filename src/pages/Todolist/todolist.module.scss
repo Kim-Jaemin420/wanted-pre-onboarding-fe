@@ -12,12 +12,16 @@
 .wrapper > div {
   background-color: color.$backgroundWhite;
   padding: 2rem 2rem;
-  width: 30rem;
+  width: 33rem;
   min-height: 50rem;
   height: auto;
 }
 
 .wrapper h1 {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
+}
+
+.wrapper ul {
+  margin-left: 1.5rem;
 }

@@ -4,7 +4,35 @@
   margin-bottom: 3rem;
 }
 
+.formWrapper fieldset {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .formWrapper input[type='text'] {
   width: 20rem;
+  height: 3.5rem;
   margin-right: 0.5rem;
+}
+
+.formWrapper input[type='submit'] {
+  font-size: 1.8rem;
+  border: 0.1rem solid color.$primary;
+  border-radius: 0.3rem;
+  width: 5.5rem;
+  height: 3.5rem;
+  background-color: color.$backgroundWhite;
+  color: color.$primary;
+}
+
+.formWrapper input[type='submit']:hover {
+  background-color: color.$primary;
+  color: color.$backgroundWhite;
+}
+
+.formWrapper input[type='submit']:disabled {
+  background-color: color.$backgroundWhite;
+  border: 0.1rem solid color.$disabled;
+  color: color.$disabled;
 }

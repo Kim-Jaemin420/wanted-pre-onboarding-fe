@@ -1,4 +1,51 @@
+@use '../../styles/color';
+
 .todoItem {
   margin-bottom: 1rem;
   line-height: 2rem;
+}
+
+.todoItem label::before {
+  display: inline-block;
+  content: '';
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid color.$fontColor;
+  border-radius: 0.5rem;
+}
+
+input[type='checkbox']:checked + label::before {
+  background-color: color.$primary;
+  display: inline-block;
+  content: '';
+  margin-right: 0.5rem;
+  width: 2rem;
+  height: 2rem;
+  border: 0.1rem solid color.$primary;
+  border-radius: 0.5rem;
+}
+
+input[type='checkbox'] + label > span {
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  width: 14rem;
+}
+
+input[type='checkbox']:checked + label > span {
+  text-decoration: line-through;
+  color: color.$disabled;
+}
+
+.todoContent {
+  font-size: 2rem;
+  margin-left: 1rem;
+  vertical-align: top;
+}
+
+.todoItem button {
+  margin-left: 1rem;
+  vertical-align: top;
 }
