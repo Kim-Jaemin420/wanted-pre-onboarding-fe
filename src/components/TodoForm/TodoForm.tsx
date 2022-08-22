@@ -1,21 +1,27 @@
 import { AxiosError } from 'axios';
-import React from 'react';
+import React, { Dispatch, SetStateAction } from 'react';
 import { createTodo } from '../../api';
 import { Todo } from '../../types';
 import styles from './todoForm.module.scss';
 
 const { formWrapper } = styles;
 
-function TodoForm() {
+interface Props {
+  setTodos: Dispatch<SetStateAction<Todo[]>>;
+}
+
+function TodoForm({ setTodos }: Props) {
   const handleSubmitForm = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
     const { todoField } = event.currentTarget;
-    const todo: string = todoField.value;
+    const content: string = todoField.value;
 
     try {
-      const { data } = await createTodo({ todo });
-      console.log(data);
+      const { data: todo } = await createTodo({ todo: content });
+
+      setTodos((todos) => [...todos, todo]);
+      todoField.value = '';
     } catch (error) {
       if (error instanceof AxiosError) {
         console.log(error.response);
