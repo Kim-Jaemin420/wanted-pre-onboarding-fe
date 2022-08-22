@@ -1,7 +1,7 @@
 import { AxiosError } from 'axios';
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signin } from '../../api/user';
+import { signin } from '../../api';
 import { ACCESS_TOKEN, TODO_PAGE } from '../../consts';
 import { setLocalStorage, validateEmailCondition, validatePasswordCondition } from '../../utils';
 import styles from './signin.module.scss';

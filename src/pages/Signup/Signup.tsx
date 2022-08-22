@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AxiosError } from 'axios';
-import { signup } from '../../api/user';
+import { signup } from '../../api';
 import { SIGNIN_PAGE } from '../../consts';
 import { validateEmailCondition, validatePasswordCondition } from '../../utils';
 import styles from './signup.module.scss';
