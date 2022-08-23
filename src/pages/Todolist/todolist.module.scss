@@ -12,8 +12,8 @@
 .wrapper > div {
   background-color: color.$backgroundWhite;
   padding: 2rem 2rem;
-  width: 40rem;
-  min-height: 50rem;
+  width: 50rem;
+  min-height: 60rem;
   height: auto;
 }
 
@@ -23,6 +23,7 @@
 }
 
 .todoList {
+  padding: 0 2rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;

@@ -2,10 +2,12 @@
 
 .todoItem {
   margin-bottom: 1rem;
-  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  height: 3rem;
 }
 
-.checkBox {
+.checkboxLabel {
   display: inline-block;
   margin-right: 0.5rem;
   width: 2rem;
@@ -14,37 +16,90 @@
   border-radius: 0.5rem;
 }
 
-input[type='checkbox']:checked + label > .checkBox {
-  background-color: color.$primary;
+.checkedLabel {
   display: inline-block;
-  content: '';
   margin-right: 0.5rem;
   width: 2rem;
   height: 2rem;
+  background-color: color.$primary;
   border: 0.1rem solid color.$primary;
   border-radius: 0.5rem;
 }
 
-input[type='checkbox'] + label > span {
+.content {
   display: inline-block;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  width: 14rem;
+  width: 18rem;
+  cursor: pointer;
 }
 
-input[type='checkbox']:checked + label > span {
+.completedContent {
+  width: 18rem;
+  cursor: pointer;
+  display: inline-block;
   text-decoration: line-through;
   color: color.$disabled;
 }
 
-.todoContent {
+.content {
   font-size: 2rem;
-  margin-left: 1rem;
-  vertical-align: top;
+  width: 19rem;
+  height: 2rem;
+  display: inline-block;
+  // vertical-align: middle;
 }
 
-.todoItem button {
-  margin-left: 1rem;
-  vertical-align: top;
+.modifyForm {
+  padding: 0;
+  width: 28rem;
+  height: 3rem;
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.completeTodo {
+  margin-right: 2.5rem;
+  width: 20rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 2.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  border: none;
+  text-decoration: line-through;
+  color: color.$disabled;
+}
+
+.modifyInput {
+  margin-right: 2.5rem;
+  width: 20rem;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  height: 2.5rem;
+  font-size: 2rem;
+  font-weight: 400;
+  border: none;
+  color: color.$fontColor;
+}
+
+.modifyInput:focus {
+  border: 1px solid;
+  outline: none;
+}
+
+input[type='submit'] {
+  border: 0.1rem solid color.$primary;
+  border-radius: 0.3rem;
+  color: color.$primary;
+  background-color: color.$backgroundWhite;
+}
+
+input[type='submit']:hover {
+  color: color.$backgroundWhite;
+  background-color: color.$primary;
 }

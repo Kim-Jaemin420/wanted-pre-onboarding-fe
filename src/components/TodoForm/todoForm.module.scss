@@ -11,7 +11,7 @@
 }
 
 .formWrapper input[type='text'] {
-  width: 20rem;
+  width: 30rem;
   height: 3.5rem;
   margin-right: 0.5rem;
 }
@@ -22,13 +22,13 @@
   border-radius: 0.3rem;
   width: 5.5rem;
   height: 3.5rem;
-  background-color: color.$backgroundWhite;
-  color: color.$primary;
+  background-color: color.$primary;
+  color: color.$backgroundWhite;
 }
 
 .formWrapper input[type='submit']:hover {
-  background-color: color.$primary;
-  color: color.$backgroundWhite;
+  background-color: color.$backgroundWhite;
+  color: color.$primary;
 }
 
 .formWrapper input[type='submit']:disabled {
